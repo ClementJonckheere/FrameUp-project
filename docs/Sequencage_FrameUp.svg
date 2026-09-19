@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1320" viewBox="0 0 1440 1320" role="img" aria-labelledby="title desc">
+<title id="title">FrameUp — terminer le web avant de choisir la route mobile</title>
+<desc id="desc">J0-Web doit être clos avant l'arbitrage PWA, WebView ou natif. Le spike natif, seulement s'il est retenu, commence par le cœur partagé, la FFI et l'interopérabilité, puis le coffre sur appareils physiques. Les scénarios métier et l'interface viennent ensuite.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#57708e" stroke-width="1.4"/></marker></defs>
+<rect width="1440" height="1320" fill="#f5f7fc"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+
+<text x="52" y="50" font-size="15" fill="#2563eb" font-weight="700" text-anchor="start">FRAMEUP  /  ADR-016 · RÉVISION 0.2</text>
+<text x="52" y="96" font-size="35" fill="#13253e" font-weight="700" text-anchor="start">Une exigence mobile, un engagement à la fois</text>
+<text x="52" y="130" font-size="18" fill="#34465c" font-weight="400" text-anchor="start">Séquençage proposé après revue • 19 septembre 2026</text>
+<rect x="350" y="165" width="740" height="137" rx="15" fill="#fffaf0" stroke="#d4deec"/>
+<rect x="350" y="183" width="5" height="101" rx="2" fill="#b45309"/>
+<text x="374" y="195" font-size="13" fill="#b45309" font-weight="700" text-anchor="start">G0 · SEUL CHANTIER ACTIF</text>
+<text x="374" y="226" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Clore J0-Web</text>
+<text x="374" y="256" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Firefox réel, matrice croisée et réserves J0 traitées.</text>
+<text x="374" y="283" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Si le gate échoue : rester sur J0-Web.</text>
+<path d="M720 302 V335" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="350" y="340" width="740" height="139" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="350" y="358" width="5" height="103" rx="2" fill="#2563eb"/>
+<text x="374" y="370" font-size="13" fill="#2563eb" font-weight="700" text-anchor="start">G1 · APRÈS CLÔTURE</text>
+<text x="374" y="401" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Choisir la route du pilote</text>
+<text x="374" y="431" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Besoin concret, capacité nommée, budget et borne du spike.</text>
+<text x="374" y="458" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Sans capacité allouée : reporter le mobile.</text>
+<path d="M720 479 V503 H255 V531" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M720 479 V531" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M720 479 V503 H1185 V531" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="538" width="410" height="153" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="50" y="556" width="5" height="117" rx="2" fill="#2563eb"/>
+<text x="74" y="568" font-size="13" fill="#2563eb" font-weight="700" text-anchor="start">OPTION À EXAMINER EN PREMIER</text>
+<text x="74" y="599" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">PWA</text>
+<text x="74" y="629" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Réutiliser le client JS/WASM.</text>
+<text x="74" y="656" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Tester les moteurs mobiles,</text>
+<text x="74" y="683" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">le stockage et la reprise.</text>
+<rect x="515" y="538" width="410" height="153" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="515" y="556" width="5" height="117" rx="2" fill="#2563eb"/>
+<text x="539" y="568" font-size="13" fill="#2563eb" font-weight="700" text-anchor="start">SI UNE INTÉGRATION OS MANQUE</text>
+<text x="539" y="599" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">WebView / conteneur</text>
+<text x="539" y="629" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Réutiliser JS/WASM.</text>
+<text x="539" y="656" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Valider bridge, origine, coffre</text>
+<text x="539" y="683" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">et coût des plugins nécessaires.</text>
+<rect x="980" y="538" width="410" height="153" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="980" y="556" width="5" height="117" rx="2" fill="#7652b8"/>
+<text x="1004" y="568" font-size="13" fill="#7652b8" font-weight="700" text-anchor="start">SEULEMENT SI JUSTIFIÉ</text>
+<text x="1004" y="599" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Moteur natif + FFI</text>
+<text x="1004" y="629" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Exigence non satisfaite autrement.</text>
+<text x="1004" y="656" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Responsable et matériel disponibles.</text>
+<text x="1004" y="683" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Aucune UI à ce stade.</text>
+<path d="M255 691 V726 H488 V761" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M720 691 V726 H488" fill="none" stroke="#57708e" stroke-width="2"/>
+<rect x="50" y="768" width="875" height="167" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="50" y="786" width="5" height="131" rx="2" fill="#2563eb"/>
+<text x="74" y="798" font-size="13" fill="#2563eb" font-weight="700" text-anchor="start">PREUVES DE LA ROUTE CHOISIE</text>
+<text x="74" y="829" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Un essai borné, pas deux implémentations en parallèle</text>
+<text x="74" y="859" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Compatibilité mobile, échanges web, persistance et déverrouillage.</text>
+<text x="74" y="886" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Échec rédhibitoire ou budget atteint : retour à G1.</text>
+<text x="74" y="913" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Réutiliser du code ne transfère pas sa validation desktop au mobile.</text>
+<path d="M1185 691 V726" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="980" y="733" width="410" height="161" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="980" y="751" width="5" height="125" rx="2" fill="#7652b8"/>
+<text x="1004" y="763" font-size="13" fill="#7652b8" font-weight="700" text-anchor="start">S1 · M01 → M03 → M02</text>
+<text x="1004" y="794" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Cœur, FFI, interop</text>
+<text x="1004" y="824" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Encodeur Rust unique + RNG ciblé.</text>
+<text x="1004" y="851" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Un OS d’abord, puis le second.</text>
+<text x="1004" y="878" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Régression web vérifiée.</text>
+<path d="M1185 894 V929" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="980" y="936" width="410" height="143" rx="15" fill="#ffffff" stroke="#d4deec"/>
+<rect x="980" y="954" width="5" height="107" rx="2" fill="#7652b8"/>
+<text x="1004" y="966" font-size="13" fill="#7652b8" font-weight="700" text-anchor="start">S2 · SI S1 PASSE</text>
+<text x="1004" y="997" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Coffre et pannes</text>
+<text x="1004" y="1027" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">M04 / M05 / M08.</text>
+<text x="1004" y="1054" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">Un appareil physique par OS retenu.</text>
+<text x="53" y="994" font-size="14" fill="#b45309" font-weight="700" text-anchor="start">RÈGLE D’ARRÊT DU SPIKE MOBILE</text>
+<text x="53" y="1026" font-size="20" fill="#13253e" font-weight="400" text-anchor="start">Interop, FFI ou coffre non démontré : retour à l’arbitrage.</text>
+<text x="53" y="1058" font-size="18" fill="#34465c" font-weight="400" text-anchor="start">Pas de développement d’UI pour contourner une preuve manquante.</text>
+<path d="M925 850 H952 V1105 H488 V1120" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M1185 1079 V1120" fill="none" stroke="#57708e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="1128" width="1340" height="133" rx="15" fill="#f0fbf7" stroke="#d4deec"/>
+<rect x="50" y="1146" width="5" height="97" rx="2" fill="#087f70"/>
+<text x="74" y="1158" font-size="13" fill="#087f70" font-weight="700" text-anchor="start">G2 · APRÈS PREUVES ET DÉCISION DE CAPACITÉ</text>
+<text x="74" y="1189" font-size="23" fill="#13253e" font-weight="700" text-anchor="start">Engager la suite du pilote</text>
+<text x="74" y="1219" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">UI et fonctions métier seulement après acceptation de la route.</text>
+<text x="74" y="1246" font-size="17" fill="#34465c" font-weight="400" text-anchor="start">M06 / M07 / M09 puis M10–M12 : reportés, requis avant les fonctions correspondantes.</text>
+<text x="52" y="1298" font-size="15" fill="#52637b" font-weight="400" text-anchor="start">État : J0-Web ouvert · Aucune route mobile sélectionnée · Aucun test natif exécuté</text>
+</g></svg>
