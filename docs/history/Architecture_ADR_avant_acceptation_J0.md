@@ -1,10 +1,10 @@
 # FrameUp — Architecture technique et registre ADR
 
-> Remplacement partiel au 18 septembre 2026 — [ADR-016, révision 0.2](ADR-016_Application_mobile.md) : l’exclusion du mobile est remplacée à l’échelle du produit. La validation initiale J0-Web reste limitée au desktop. Route mobile et entrée au pilote restent conditionnelles ; la [matrice mobile](Matrice_J0_mobile.md) est un backlog, pas un chantier lancé.
+> Remplacement partiel au 18 septembre 2026 — [ADR-016, révision 0.2](../ADR-016_Application_mobile.md) : l’exclusion du mobile est remplacée à l’échelle du produit. La validation initiale J0-Web reste limitée au desktop. Route mobile et entrée au pilote restent conditionnelles ; la [matrice mobile](../Matrice_J0_mobile.md) est un backlog, pas un chantier lancé.
 
-Version 0.2 · 19 septembre 2026 · Acceptation des contrats du POC (nom de fichier conservé pour les liens)
+Version 0.1 · 17 septembre 2026 · Proposition préparatoire au POC
 
-Décisionnaire : Clément Jonckheere, selon son instruction de clôture du 19 septembre 2026. Transcription technique : Codex. Acceptation limitée au POC décrit dans [Contrats_POC_J0.md](Contrats_POC_J0.md), sans revue indépendante ni approbation de production. Version antérieure conservée dans [l'historique](history/Architecture_ADR_avant_acceptation_J0.md).
+Responsable de décision proposé : Clément Jonckheere. Revue technique et cryptographique : à organiser. Aucun choix n'est présenté comme audité, implémenté ou approuvé par une équipe externe.
 
 ## 1. Comment utiliser ce document
 
@@ -12,7 +12,7 @@ La documentation d'architecture décrit le système, ses frontières de confianc
 
 Référence fonctionnelle : `FrameUp_Prototype_Specification_v0.1.md`, datée du 16 septembre 2026, notamment D01–D10 et les scénarios T01–T36. La présente version précise une architecture candidate et des critères de passage ; elle ne modifie pas silencieusement le périmètre du prototype. Les règles d'accès, d'historique complet et de récupération viennent de cette proposition et restent soumises à validation produit.
 
-Statuts utilisés : **Proposé** (choix de travail), **Expérimental** (hypothèse dont la faisabilité doit être démontrée), **Accepté** (après décision explicite enregistrée), **Remplacé** (un nouvel ADR conserve le lien). Les ADR-003, 005, 006, 010 et 011 sont Acceptés pour les contrats et limites du POC. Les exigences métier au-delà du POC gardent leur validation J1/J4. Le choix KDF cible de l'ADR-011 reste bloquant G0.
+Statuts utilisés : **Proposé** (choix de travail), **Expérimental** (hypothèse dont la faisabilité doit être démontrée), **Accepté** (après décision explicite enregistrée), **Remplacé** (un nouvel ADR conserve le lien). Aucune entrée de ce registre n'est encore au statut Accepté.
 
 Le POC doit éprouver les décisions risquées avant la construction de toutes les interfaces. La charte graphique décrit la cible visuelle ; elle ne constitue pas un critère préalable à la preuve cryptographique.
 
@@ -162,15 +162,13 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 **Validation / révision.** Rechargement direct d'un projet, absence de requêtes tierces et absence de contenus canaris dans les réponses statiques. Réexaminer Next.js si l'adaptation dépasse l'intérêt du framework.
 
-### ADR-003 — OpenMLS retenu pour le POC web
+### ADR-003 — MLS comme candidat, intégration cryptographique conditionnelle
 
-**Statut : Accepté — périmètre POC J0.**
-
-**Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. OpenMLS 0.9.0/RustCrypto 0.6.0 et suite X25519/AES-128-GCM/SHA-256/Ed25519 retenus ; matrice 38/0/0. Snapshots liés aux versions, pas de compatibilité native présumée. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
+**Statut : Expérimental, bloquant J0.**
 
 **Contexte.** Ajouter et retirer des appareils nécessite un protocole de groupe éprouvé. Chiffrer avec une bibliothèque de primitives ne résout pas le cycle de vie.
 
-**Décision.** Retenir OpenMLS 0.9.0 pour le POC sur les versions Chromium/Firefox enregistrées dans la référence CI. Le protocole s'exécute sur les terminaux ; le serveur ne devient pas un membre du groupe détenant les clés. Aucun protocole de groupe maison en repli silencieux.
+**Décision.** Évaluer une implémentation existante de MLS, notamment OpenMLS, dans les navigateurs cibles. Le protocole s'exécute sur les terminaux ; le serveur ne devient pas un membre du groupe détenant les clés. Aucun protocole de groupe maison en repli silencieux.
 
 **Alternatives.** Autre implémentation MLS, client installé si le navigateur est bloquant, révision du périmètre. Une clé globale immuable partagée à tout le projet est rejetée.
 
@@ -194,9 +192,7 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 ### ADR-005 — Identité stable, appareils séparés et politiques signées
 
-**Statut : Accepté — périmètre POC J0.**
-
-**Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. Formats identité/certificat/politique et ancres figés aux sections 1–3 du contrat ; admission métier, expirations et délégation restent J1. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
+**Statut : Expérimental pour les formats ; règles proposées.**
 
 **Contexte.** L'inscription pseudonyme doit coexister avec une vérification humaine et une révocation d'appareil.
 
@@ -210,9 +206,7 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 ### ADR-006 — Archives durables séparées des états de communication
 
-**Statut : Accepté — périmètre POC J0.**
-
-**Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. Séparation et aller-retour des clés d'archives acceptés ; rotation par période, partage complet d'historique et T07/T11/T25/T35 non démontrés. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
+**Statut : Expérimental pour la composition ; règle d'historique proposée.**
 
 **Contexte.** Le travail collaboratif demande de relire le passé et d'ajouter un appareil. La conservation de clés d'archives modifie les garanties en cas de compromission future.
 
@@ -268,9 +262,7 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 ### ADR-010 — Récupération par kit et nouvelles générations
 
-**Statut : Accepté — périmètre POC J0.**
-
-**Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. BIP39/HKDF et domaines identité/archives figés ; racine commune et besoin des paquets explicitement acceptés. Générations serveur et récupération propriétaire restent J1/J4. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
+**Statut : Expérimental pour l'intégration ; règle produit proposée.**
 
 **Contexte.** Perdre tous les appareils ne doit pas permettre à l'administrateur de contourner le chiffrement.
 
@@ -284,9 +276,7 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 ### ADR-011 — Coffre local, blobs privés et finalisation autorisée
 
-**Statut : Accepté — périmètre POC J0.**
-
-**Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. Enveloppe AES-GCM, métadonnées IndexedDB et discipline dirty/outbox acceptées. Format POC PBKDF2-SHA256/600k ; choix KDF cible encore ouvert jusqu'au benchmark. Uploads, purge et verrouillage d'inactivité non validés. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
+**Statut : Proposé, formats crypto expérimentaux jusqu'à J0.**
 
 **Contexte.** Un cache hors connexion et un upload interrompu créent des copies hors journal métier.
 
@@ -358,8 +348,8 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 | Question à trancher | Responsable proposé | Quand / preuve |
 |---|---|---|
-| Bibliothèque MLS, provider crypto et compatibilité navigateur | Clément | Accepté pour le POC : référence CI archivée, versions explicitement limitées. |
-| Formats d'identité, certificats, enveloppes et clés d'archives | Clément | Contrats POC acceptés ; revue indépendante avant données sensibles. |
+| Bibliothèque MLS, provider crypto et compatibilité navigateur | Développement + revue spécialisée | J0 : exécution sur Chromium/Firefox, état persistant et retrait vérifiés. |
+| Formats d'identité, certificats, enveloppes et clés d'archives | Revue spécialisée + développement | J0 : formats versionnés, invariants et tests négatifs. |
 | Coût réel de Rust/Next.js dans l'équipe | Responsable projet | J0/J1 : un parcours vertical fonctionnel et maintenable. |
 | Paramètres du coffre local et budget mémoire | Développement | J0 : mesures sur matériels cibles, sans blocage excessif de l'interface. |
 | Direction graphique et concept de marque | Clément | Relecture de la charte et du PDF ; ne bloque pas les essais crypto. |

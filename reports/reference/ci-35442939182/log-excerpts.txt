@@ -1,0 +1,38 @@
+﻿2026-09-19T12:28:10.0018087Z Current runner version: '2.337.0'
+2026-09-19T12:28:10.0053471Z ##[group]Runner Image Provisioner
+2026-09-19T12:28:10.0054993Z Hosted Compute Agent
+2026-09-19T12:28:10.0056038Z Version: 20260828.587
+2026-09-19T12:28:10.0057279Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-19T12:28:10.0058862Z Build Date: 2026-08-28T16:44:25Z
+2026-09-19T12:28:10.0060406Z Worker ID: {40704a7a-1676-44e3-8d06-aaf4b0942b5c}
+2026-09-19T12:28:10.0061853Z Azure Region: eastus2
+2026-09-19T12:28:10.0062868Z ##[endgroup]
+2026-09-19T12:28:10.0065227Z ##[group]Operating System
+2026-09-19T12:28:10.0066269Z Ubuntu
+2026-09-19T12:28:10.0067215Z 24.04.5
+2026-09-19T12:28:10.0068100Z LTS
+2026-09-19T12:28:10.0068922Z ##[endgroup]
+2026-09-19T12:28:10.0070274Z ##[group]Runner Image
+2026-09-19T12:28:10.0071442Z Image: ubuntu-24.04
+2026-09-19T12:28:10.0072576Z Version: 20260907.300.1
+2026-09-19T12:28:10.0074855Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-19T12:28:10.0077739Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+2026-09-19T12:28:10.0079606Z ##[endgroup]
+2026-09-19T12:28:10.0081919Z ##[group]GITHUB_TOKEN Permissions
+2026-09-19T12:28:10.0084887Z Contents: read
+2026-09-19T12:28:10.0086148Z Metadata: read
+2026-09-19T12:28:10.9765287Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +671dc8fd5d174b8181cd9113b341e1c2bf366e09:refs/remotes/pull/1/merge
+2026-09-19T12:28:11.4568252Z  * [new ref]         671dc8fd5d174b8181cd9113b341e1c2bf366e09 -> pull/1/merge
+2026-09-19T12:28:11.4792203Z HEAD is now at 671dc8f Merge 8b64559df2c171b93370ebbe3cc371a0dc9bb310 into c2f36e2ec3674dc793b1186e253209ea0b3de050
+2026-09-19T12:28:11.4853727Z 671dc8fd5d174b8181cd9113b341e1c2bf366e09
+2026-09-19T12:30:07.1995236Z Downloading Firefox 141.0 (playwright build v1490) from https://cdn.playwright.dev/dbazure/download/playwright/builds/firefox/1490/firefox-ubuntu-24.04.zip
+2026-09-19T12:30:09.6883448Z Firefox 141.0 (playwright build v1490) downloaded to /home/runner/.cache/ms-playwright/firefox-1490
+2026-09-19T12:30:55.7041552Z ✔ canonicalization rejects unsupported values and sorts object keys (1.127669ms)
+2026-09-19T12:30:55.7075570Z ✔ AES-GCM authenticates project context (7.842111ms)
+2026-09-19T12:30:55.7076796Z ✔ relay idempotence and event ID collision (0.551046ms)
+2026-09-19T12:30:55.7077867Z ✔ relay snapshot retains revoked recipients (0.832119ms)
+2026-09-19T12:30:55.7175740Z ℹ tests 4
+2026-09-19T12:30:55.7177677Z ℹ pass 4
+2026-09-19T12:30:55.7178226Z ℹ fail 0
+2026-09-19T12:31:25.5660669Z     "wasmSha256": "032e6221a9fc389aa2c87cd22c9773ac3f22df7a9337dd39b8837c0e8651e6c9",
+2026-09-19T12:31:26.0290914Z SHA256 digest of uploaded artifact zip is bdb687179a7d90bb897c78254f460c30dbaa3c432a0edd6ea6f92fd163a100a4

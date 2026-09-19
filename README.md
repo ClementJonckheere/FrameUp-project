@@ -4,10 +4,10 @@ FrameUp vise un espace collaboratif chiffré avec un client web et une applicati
 
 ## État du jalon
 
-- Chromium : 20 contrôles identité/récupération et 12 scénarios MLS/coffre/pannes réussis dans l'environnement local de référence.
-- Tests unitaires : 4 réussis sur les mêmes sources.
-- Firefox et matrice mixte : non validés, démarrage bloqué dans l'environnement local.
-- GitHub Actions : intégration en cours sur `codex/j0-browser-matrix` ; le résultat de la CI doit être vérifié sur le commit concerné. Les anciens refus d’écriture sont résolus.
+- Matrice de référence CI du 19 septembre 2026 : 38 entrées PASS, 0 FAIL, 0 BLOCKED (Chromium/Chromium, Firefox/Firefox, Chromium/Firefox et deux suites identité/récupération).
+- Tests unitaires de référence : 4 PASS. Versions, OS, commit réellement exécuté et empreinte WASM [archivés](reports/reference/ci-35442939182/provenance.json).
+- Contrats POC : ADR-003/005/006/010/011 acceptés dans leur périmètre limité ; [formats, ancres, sérialisation et limites](docs/Contrats_POC_J0.md).
+- **G0 reste ouvert : mesure sur appareil physique cible et arbitrage KDF manquants.** [Benchmark prêt à exécuter](docs/Benchmark_Coffre.md), sans Rust : `npm ci`, `npm run benchmark:build`, `npm run serve`, puis `/benchmark.html`.
 - Application mobile : exigence confirmée ; route du pilote ouverte (PWA, WebView ou natif). Aucun chantier mobile avant clôture J0-Web ; Android/iOS restent une hypothèse de cible.
 
 **J0 reste ouvert.** Les preuves desktop ne valent pas validation de l'application mobile.
@@ -51,6 +51,6 @@ Les dépendances résolues sont figées par `package-lock.json` et `mls/Cargo.lo
 
 ## Documents de référence
 
-Lire `docs/Architecture_J0.md` pour les limites concrètes de cette implémentation. `docs/Rapport_J0.md` conserve les résultats antérieurs à l'intégration GitHub ; `docs/Integration_GitHub.md` fait foi pour l'état de cette intégration. Les documents v0.1 de spécification, architecture et charte restent historiques ; ADR-016 remplace explicitement l’exclusion du mobile à l’échelle du produit, tout en maintenant J0-Web comme validation initiale desktop. Le schéma `docs/Sequencage_FrameUp.svg` résume les gates.
+Lire `docs/Architecture_J0.md` pour les limites concrètes de cette implémentation. `docs/Rapport_J0.md` décrit la référence CI et le gate actuel ; les résultats locaux antérieurs sont conservés dans `docs/history/`. Les noms v0.1 sont conservés pour les liens ; le registre ADR contient les acceptations datées du 19 septembre. ADR-016 remplace explicitement l’exclusion du mobile à l’échelle du produit, tout en maintenant J0-Web comme validation initiale desktop. Le schéma `docs/Sequencage_FrameUp.svg` résume les gates.
 
 Les clés d'identité et de wrapping des archives sont séparées par usage, mais dérivent du même kit racine. Le coffre protège les secrets au repos ; le POC ne garantit pas une protection contre du code client compromis, un rollback complet du profil ou une coupure électrique. Le contrôle d'autorisation métier reste à coupler aux opérations MLS avant le pilote.

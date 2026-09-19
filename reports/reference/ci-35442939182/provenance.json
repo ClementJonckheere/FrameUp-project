@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "run": {
+    "id": 35442939182,
+    "attempt": 1,
+    "jobId": 105896817978,
+    "url": "https://github.com/ClementJonckheere/FrameUp-project/actions/runs/35442939182",
+    "conclusion": "success"
+  },
+  "source": {
+    "head": "8b64559df2c171b93370ebbe3cc371a0dc9bb310",
+    "base": "c2f36e2ec3674dc793b1186e253209ea0b3de050",
+    "checkout": "671dc8fd5d174b8181cd9113b341e1c2bf366e09",
+    "tree": "6ff0e610682a29b9ae19999ce685864eeb20ab5e",
+    "checkoutKind": "refs/pull/1/merge",
+    "sameTreeAsHead": true
+  },
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "runnerImage": "ubuntu-24.04",
+    "runnerImageVersion": "20260907.300.1",
+    "runnerVersion": "2.337.0",
+    "architecture": "x64",
+    "execution": "GitHub-hosted runner; no job container configured",
+    "kernelVersion": null,
+    "containerDigest": null,
+    "firefox": "141.0",
+    "firefoxPlaywrightBuild": 1490,
+    "playwright": "1.55.1",
+    "chromium": "140.0.7339.186",
+    "node": "24.20.0",
+    "rust": "1.98.1",
+    "wasmBindgen": "0.2.128",
+    "openmls": "0.9.0"
+  },
+  "wasmSha256": "032e6221a9fc389aa2c87cd22c9773ac3f22df7a9337dd39b8837c0e8651e6c9",
+  "artifact": {
+    "id": 10584139557,
+    "sha256": "bdb687179a7d90bb897c78254f460c30dbaa3c432a0edd6ea6f92fd163a100a4",
+    "expiresAt": "2026-12-18T12:28:07Z"
+  },
+  "evidence": "JSON report and selected excerpts extracted from job logs. Kernel version not recorded; binary build reproducibility not claimed."
+}

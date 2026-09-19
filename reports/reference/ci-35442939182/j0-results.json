@@ -1,0 +1,290 @@
+{
+  "metadata": {
+    "started": "2026-09-19T12:30:56.133Z",
+    "finished": "2026-09-19T12:31:25.505Z",
+    "node": "v24.20.0",
+    "platform": "linux",
+    "playwright": "1.55.1",
+    "openmls": "0.9.0",
+    "wasmBindgen": "0.2.128",
+    "wasmSha256": "032e6221a9fc389aa2c87cd22c9773ac3f22df7a9337dd39b8837c0e8651e6c9",
+    "chromiumVariant": "Playwright default Chromium headless shell",
+    "faultModel": "Injected exceptions at persistence boundaries followed by browser close/relaunch; not a power-loss simulation",
+    "browsers": {
+      "chromium": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/140.0.7339.186 Safari/537.36",
+      "firefox": "Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0"
+    }
+  },
+  "summary": {
+    "passed": 38,
+    "failed": 0,
+    "blocked": 0
+  },
+  "results": [
+    {
+      "id": "chromium/identity-recovery",
+      "status": "PASS",
+      "ms": 38,
+      "detail": {
+        "checks": [
+          "REC-01",
+          "REC-02",
+          "REC-03",
+          "REC-04",
+          "REC-05",
+          "REC-06",
+          "REC-07",
+          "REC-08",
+          "ID-01",
+          "ID-02",
+          "ID-03",
+          "ID-04",
+          "ID-05",
+          "ID-06",
+          "ID-07",
+          "ID-08",
+          "ID-09",
+          "ID-10",
+          "REC-09",
+          "REC-10"
+        ],
+        "wordCount": 24
+      }
+    },
+    {
+      "id": "firefox/identity-recovery",
+      "status": "PASS",
+      "ms": 46,
+      "detail": {
+        "checks": [
+          "REC-01",
+          "REC-02",
+          "REC-03",
+          "REC-04",
+          "REC-05",
+          "REC-06",
+          "REC-07",
+          "REC-08",
+          "ID-01",
+          "ID-02",
+          "ID-03",
+          "ID-04",
+          "ID-05",
+          "ID-06",
+          "ID-07",
+          "ID-08",
+          "ID-09",
+          "ID-10",
+          "REC-09",
+          "REC-10"
+        ],
+        "wordCount": 24
+      }
+    },
+    {
+      "id": "chromium-chromium/MLS-01-join",
+      "status": "PASS",
+      "ms": 650
+    },
+    {
+      "id": "chromium-chromium/MLS-02-exchange",
+      "status": "PASS",
+      "ms": 35
+    },
+    {
+      "id": "chromium-chromium/VAULT-01-ciphertext-at-rest",
+      "status": "PASS",
+      "ms": 3
+    },
+    {
+      "id": "chromium-chromium/VAULT-02-second-tab",
+      "status": "PASS",
+      "ms": 91
+    },
+    {
+      "id": "chromium-chromium/MLS-03-browser-restart",
+      "status": "PASS",
+      "ms": 326
+    },
+    {
+      "id": "chromium-chromium/MLS-04-out-of-order-and-replay",
+      "status": "PASS",
+      "ms": 48
+    },
+    {
+      "id": "chromium-chromium/FAULT-01-durable-outbox",
+      "status": "PASS",
+      "ms": 328
+    },
+    {
+      "id": "chromium-chromium/MLS-05-add-second-device",
+      "status": "PASS",
+      "ms": 702
+    },
+    {
+      "id": "chromium-chromium/MLS-06-removal-cryptographic",
+      "status": "PASS",
+      "ms": 52,
+      "detail": {
+        "rejection": "page.evaluate: Error: ValidationError(WrongEpoch)"
+      }
+    },
+    {
+      "id": "chromium-chromium/MLS-07-tampered-ciphertext",
+      "status": "PASS",
+      "ms": 10,
+      "detail": {
+        "rejection": "page.evaluate: Error: ValidationError(UnableToDecrypt(AeadError))"
+      }
+    },
+    {
+      "id": "chromium-chromium/FAULT-02-dirty-state-after-operation",
+      "status": "PASS",
+      "ms": 470
+    },
+    {
+      "id": "chromium-chromium/VAULT-03-wrong-passphrase",
+      "status": "PASS",
+      "ms": 454
+    },
+    {
+      "id": "firefox-firefox/MLS-01-join",
+      "status": "PASS",
+      "ms": 3479
+    },
+    {
+      "id": "firefox-firefox/MLS-02-exchange",
+      "status": "PASS",
+      "ms": 35
+    },
+    {
+      "id": "firefox-firefox/VAULT-01-ciphertext-at-rest",
+      "status": "PASS",
+      "ms": 4
+    },
+    {
+      "id": "firefox-firefox/VAULT-02-second-tab",
+      "status": "PASS",
+      "ms": 261
+    },
+    {
+      "id": "firefox-firefox/MLS-03-browser-restart",
+      "status": "PASS",
+      "ms": 1674
+    },
+    {
+      "id": "firefox-firefox/MLS-04-out-of-order-and-replay",
+      "status": "PASS",
+      "ms": 38
+    },
+    {
+      "id": "firefox-firefox/FAULT-01-durable-outbox",
+      "status": "PASS",
+      "ms": 1694
+    },
+    {
+      "id": "firefox-firefox/MLS-05-add-second-device",
+      "status": "PASS",
+      "ms": 3221
+    },
+    {
+      "id": "firefox-firefox/MLS-06-removal-cryptographic",
+      "status": "PASS",
+      "ms": 61,
+      "detail": {
+        "rejection": "page.evaluate: ValidationError(WrongEpoch)"
+      }
+    },
+    {
+      "id": "firefox-firefox/MLS-07-tampered-ciphertext",
+      "status": "PASS",
+      "ms": 14,
+      "detail": {
+        "rejection": "page.evaluate: ValidationError(UnableToDecrypt(AeadError))"
+      }
+    },
+    {
+      "id": "firefox-firefox/FAULT-02-dirty-state-after-operation",
+      "status": "PASS",
+      "ms": 3489
+    },
+    {
+      "id": "firefox-firefox/VAULT-03-wrong-passphrase",
+      "status": "PASS",
+      "ms": 2370
+    },
+    {
+      "id": "chromium-firefox/MLS-01-join",
+      "status": "PASS",
+      "ms": 2067
+    },
+    {
+      "id": "chromium-firefox/MLS-02-exchange",
+      "status": "PASS",
+      "ms": 31
+    },
+    {
+      "id": "chromium-firefox/VAULT-01-ciphertext-at-rest",
+      "status": "PASS",
+      "ms": 2
+    },
+    {
+      "id": "chromium-firefox/VAULT-02-second-tab",
+      "status": "PASS",
+      "ms": 79
+    },
+    {
+      "id": "chromium-firefox/MLS-03-browser-restart",
+      "status": "PASS",
+      "ms": 1663
+    },
+    {
+      "id": "chromium-firefox/MLS-04-out-of-order-and-replay",
+      "status": "PASS",
+      "ms": 32
+    },
+    {
+      "id": "chromium-firefox/FAULT-01-durable-outbox",
+      "status": "PASS",
+      "ms": 340
+    },
+    {
+      "id": "chromium-firefox/MLS-05-add-second-device",
+      "status": "PASS",
+      "ms": 750
+    },
+    {
+      "id": "chromium-firefox/MLS-06-removal-cryptographic",
+      "status": "PASS",
+      "ms": 57,
+      "detail": {
+        "rejection": "page.evaluate: ValidationError(WrongEpoch)"
+      }
+    },
+    {
+      "id": "chromium-firefox/MLS-07-tampered-ciphertext",
+      "status": "PASS",
+      "ms": 10,
+      "detail": {
+        "rejection": "page.evaluate: Error: ValidationError(UnableToDecrypt(AeadError))"
+      }
+    },
+    {
+      "id": "chromium-firefox/FAULT-02-dirty-state-after-operation",
+      "status": "PASS",
+      "ms": 476
+    },
+    {
+      "id": "chromium-firefox/VAULT-03-wrong-passphrase",
+      "status": "PASS",
+      "ms": 464
+    }
+  ],
+  "unvalidated": [
+    "Production account recovery endpoint and atomic generation revocation",
+    "Complete owner recovery and group reinitialization",
+    "Protection against malicious JavaScript or complete local rollback without trusted checkpoint",
+    "Independent cryptographic review",
+    "Latest stable browser compatibility beyond recorded builds"
+  ]
+}

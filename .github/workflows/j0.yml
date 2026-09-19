@@ -26,11 +26,11 @@ jobs:
           mkdir -p reports
           set -o pipefail
           npm run test:unit | tee reports/unit-results.tap
-      - run: npm test
-      - name: Browser report
-        if: always()
+      - name: Validate benchmark tooling (not target performance)
         run: |
-          node --input-type=module -e 'import fs from "node:fs"; const p="reports/j0-results.json"; if(fs.existsSync(p)) console.log(fs.readFileSync(p,"utf8")); else console.log("Browser report unavailable: consult preceding build or test steps.");'
+          npm run benchmark:build
+          npm run test:benchmark
+      - run: npm test
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -195,7 +195,7 @@ Sans kit et sans appareil autorisé, aucun reset par l'administrateur ne restitu
 
 ### 5.5 Coffre local
 
-Cache, index, états de groupe et brouillons sont chiffrés dans le stockage local. Le mot de passe de déverrouillage reste local ; une fonction telle qu'Argon2id via une bibliothèque éprouvée protège la clé du coffre, avec sel et paramètres mesurés sur les appareils cibles. [Libsodium](https://doc.libsodium.org/password_hashing/default_phf)
+Cache, index, états de groupe et brouillons sont chiffrés dans le stockage local. Le mot de passe de déverrouillage reste local ; la cible initiale proposait Argon2id. Au 19 septembre 2026, le POC exécuté dérive directement la clé AES avec PBKDF2-SHA256/600 000 itérations et un sel aléatoire de 16 octets. Ce choix de faisabilité n'est pas encore l'arbitrage cible. La comparaison mesurée et la décision restent bloquantes G0 ; voir [le protocole](Benchmark_Coffre.md). [Libsodium](https://doc.libsodium.org/password_hashing/default_phf)
 
 Verrouillage après 10 minutes d'inactivité et au clic « Verrouiller ». L'application retire les références aux secrets en mémoire au mieux, sans promettre un effacement matériel garanti en JavaScript. Aucun contenu ni clé dans `localStorage`, URL ou logs. Un seul onglet actif en écriture par profil navigateur ; les autres onglets affichent un état bloqué afin d'éviter des mises à jour concurrentes du même état MLS local.
 

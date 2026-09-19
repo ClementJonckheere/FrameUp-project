@@ -101,7 +101,7 @@ Injecter un échec de la dépendance d'entropie dans des tests isolés pour vér
 
 | Étape | Entrée | Preuve attendue / décision |
 | --- | --- | --- |
-| G0 — J0-Web | Travail déjà engagé. | Firefox réel + matrice complète et réserves J0 traitées ; sinon rester sur J0-Web. |
+| G0 — J0-Web | Travail déjà engagé. | Matrice réelle et provenance archivées ; contrats POC acceptés ; mesure physique et décision KDF consignées. Ce dernier point reste ouvert : voir [le gate](Rapport_J0.md). |
 | G1 — Route du pilote | G0 clos, besoin et capacité explicités. | Examiner PWA d'abord, puis WebView/natif seulement pour des écarts identifiés ; reporter si capacité absente. |
 | S1 — Si natif : cœur, FFI, interop | Choix natif justifié et spike borné. | M01–M03, RNG et non-régression web ; commencer par un seul OS disponible, puis le second avant d'affirmer la faisabilité Android+iOS. Échec bloquant : retour à G1, aucune UI mobile. |
 | S2 — Si S1 passe : coffre et pannes | Interop/FFI établies. | M04, M05 et M08 sur un appareil physique par OS retenu ; vérifier le mécanisme réel de protection et son comportement en cas d'indisponibilité. |
