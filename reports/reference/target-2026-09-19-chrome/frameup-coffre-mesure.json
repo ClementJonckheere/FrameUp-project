@@ -1,0 +1,352 @@
+{
+  "format": 1,
+  "started": "2026-09-19T17:47:33.876Z",
+  "parameters": {
+    "pbkdf2": {
+      "hash": "SHA-256",
+      "iterations": 600000,
+      "saltBytes": 16,
+      "keyBytes": 32
+    },
+    "argon2id": {
+      "version": 19,
+      "memoryKiB": 65536,
+      "iterations": 3,
+      "parallelism": 4,
+      "saltBytes": 16,
+      "keyBytes": 32
+    }
+  },
+  "argonImplementation": "hash-wasm@4.12.0",
+  "actualVault": "web/vault.js unchanged PBKDF2 path",
+  "memory": {
+    "argonConfiguredMiB": 64,
+    "measuredPeakMiB": null
+  },
+  "rounds": [
+    {
+      "index": 1,
+      "pbkdf2": {
+        "deriveMs": 87.59999999403954,
+        "encryptMs": 38.20000000298023,
+        "writeMs": 6.700000002980232,
+        "unlockMs": 170.79999999701977
+      },
+      "argon2id": {
+        "deriveMs": 179.39999999850988,
+        "encryptMs": 37.399999998509884,
+        "writeMs": 7,
+        "unlockMs": 269.8999999985099
+      },
+      "actualVault": {
+        "createMs": 148.70000000298023,
+        "unlockMs": 164.5,
+        "commitMs": 48.29999999701977
+      }
+    },
+    {
+      "index": 2,
+      "argon2id": {
+        "deriveMs": 179.5,
+        "encryptMs": 38,
+        "writeMs": 6.399999998509884,
+        "unlockMs": 258.1000000014901
+      },
+      "pbkdf2": {
+        "deriveMs": 86.69999999552965,
+        "encryptMs": 36.900000005960464,
+        "writeMs": 6.5999999940395355,
+        "unlockMs": 170.5
+      },
+      "actualVault": {
+        "createMs": 144.79999999701977,
+        "unlockMs": 166.80000000447035,
+        "commitMs": 48.19999999552965
+      }
+    },
+    {
+      "index": 3,
+      "pbkdf2": {
+        "deriveMs": 87.60000000149012,
+        "encryptMs": 38.30000000447035,
+        "writeMs": 6.5999999940395355,
+        "unlockMs": 171.20000000298023
+      },
+      "argon2id": {
+        "deriveMs": 177.39999999850988,
+        "encryptMs": 38.70000000298023,
+        "writeMs": 6.5999999940395355,
+        "unlockMs": 260.6000000014901
+      },
+      "actualVault": {
+        "createMs": 141.79999999701977,
+        "unlockMs": 163.70000000298023,
+        "commitMs": 47.600000001490116
+      }
+    },
+    {
+      "index": 4,
+      "argon2id": {
+        "deriveMs": 179.20000000298023,
+        "encryptMs": 37.69999999552965,
+        "writeMs": 6.899999998509884,
+        "unlockMs": 261.40000000596046
+      },
+      "pbkdf2": {
+        "deriveMs": 88.10000000149012,
+        "encryptMs": 36.899999998509884,
+        "writeMs": 6.399999998509884,
+        "unlockMs": 169.5
+      },
+      "actualVault": {
+        "createMs": 158.60000000149012,
+        "unlockMs": 163.29999999701977,
+        "commitMs": 52.600000001490116
+      }
+    },
+    {
+      "index": 5,
+      "pbkdf2": {
+        "deriveMs": 88.20000000298023,
+        "encryptMs": 37.69999999552965,
+        "writeMs": 6.200000002980232,
+        "unlockMs": 172.29999999701977
+      },
+      "argon2id": {
+        "deriveMs": 177.29999999701977,
+        "encryptMs": 37.399999998509884,
+        "writeMs": 6.600000001490116,
+        "unlockMs": 257.1000000014901
+      },
+      "actualVault": {
+        "createMs": 141.20000000298023,
+        "unlockMs": 163.29999999701977,
+        "commitMs": 46.70000000298023
+      }
+    },
+    {
+      "index": 6,
+      "argon2id": {
+        "deriveMs": 177.59999999403954,
+        "encryptMs": 37.80000000447035,
+        "writeMs": 6.600000001490116,
+        "unlockMs": 260.3999999985099
+      },
+      "pbkdf2": {
+        "deriveMs": 87.89999999850988,
+        "encryptMs": 37,
+        "writeMs": 6.399999998509884,
+        "unlockMs": 170.70000000298023
+      },
+      "actualVault": {
+        "createMs": 142.89999999850988,
+        "unlockMs": 162.30000000447035,
+        "commitMs": 52
+      }
+    },
+    {
+      "index": 7,
+      "pbkdf2": {
+        "deriveMs": 87.5,
+        "encryptMs": 38.899999998509884,
+        "writeMs": 6.5,
+        "unlockMs": 168.5
+      },
+      "argon2id": {
+        "deriveMs": 177.10000000149012,
+        "encryptMs": 38.70000000298023,
+        "writeMs": 6.299999997019768,
+        "unlockMs": 256.5
+      },
+      "actualVault": {
+        "createMs": 142.09999999403954,
+        "unlockMs": 163.80000000447035,
+        "commitMs": 50.899999998509884
+      }
+    },
+    {
+      "index": 8,
+      "argon2id": {
+        "deriveMs": 177.39999999850988,
+        "encryptMs": 39.100000001490116,
+        "writeMs": 6.600000001490116,
+        "unlockMs": 266.09999999403954
+      },
+      "pbkdf2": {
+        "deriveMs": 87.60000000149012,
+        "encryptMs": 37.70000000298023,
+        "writeMs": 6.5,
+        "unlockMs": 181.19999999552965
+      },
+      "actualVault": {
+        "createMs": 142.09999999403954,
+        "unlockMs": 173.30000000447035,
+        "commitMs": 51.899999998509884
+      }
+    },
+    {
+      "index": 9,
+      "pbkdf2": {
+        "deriveMs": 87.20000000298023,
+        "encryptMs": 37.69999999552965,
+        "writeMs": 6.399999998509884,
+        "unlockMs": 167.90000000596046
+      },
+      "argon2id": {
+        "deriveMs": 179.10000000149012,
+        "encryptMs": 38.399999998509884,
+        "writeMs": 6.4000000059604645,
+        "unlockMs": 256.5
+      },
+      "actualVault": {
+        "createMs": 144.89999999850988,
+        "unlockMs": 164.39999999850988,
+        "commitMs": 47.30000000447035
+      }
+    },
+    {
+      "index": 10,
+      "argon2id": {
+        "deriveMs": 175,
+        "encryptMs": 38.5,
+        "writeMs": 6.600000001490116,
+        "unlockMs": 257.19999999552965
+      },
+      "pbkdf2": {
+        "deriveMs": 88,
+        "encryptMs": 39.20000000298023,
+        "writeMs": 6.5,
+        "unlockMs": 173.39999999850988
+      },
+      "actualVault": {
+        "createMs": 143.69999999552965,
+        "unlockMs": 167.10000000149012,
+        "commitMs": 52.20000000298023
+      }
+    }
+  ],
+  "status": "COMPLETE",
+  "payloadBytes": 1048601,
+  "cold": {
+    "pbkdf2": {
+      "deriveMs": 93.10000000149012,
+      "encryptMs": 38.5,
+      "writeMs": 7.899999998509884,
+      "unlockMs": 185
+    },
+    "argon2id": {
+      "deriveMs": 198.39999999850988,
+      "encryptMs": 40.29999999701977,
+      "writeMs": 6.700000002980232,
+      "unlockMs": 267.19999999552965
+    }
+  },
+  "summary": {
+    "pbkdf2": {
+      "deriveMs": {
+        "count": 10,
+        "medianMs": 87.60000000149012,
+        "p95Ms": 88.20000000298023,
+        "maxMs": 88.20000000298023
+      },
+      "encryptMs": {
+        "count": 10,
+        "medianMs": 37.69999999925494,
+        "p95Ms": 39.20000000298023,
+        "maxMs": 39.20000000298023
+      },
+      "writeMs": {
+        "count": 10,
+        "medianMs": 6.5,
+        "p95Ms": 6.700000002980232,
+        "maxMs": 6.700000002980232
+      },
+      "unlockMs": {
+        "count": 10,
+        "medianMs": 170.75,
+        "p95Ms": 181.19999999552965,
+        "maxMs": 181.19999999552965
+      }
+    },
+    "argon2id": {
+      "deriveMs": {
+        "count": 10,
+        "medianMs": 177.4999999962747,
+        "p95Ms": 179.5,
+        "maxMs": 179.5
+      },
+      "encryptMs": {
+        "count": 10,
+        "medianMs": 38.19999999925494,
+        "p95Ms": 39.100000001490116,
+        "maxMs": 39.100000001490116
+      },
+      "writeMs": {
+        "count": 10,
+        "medianMs": 6.600000001490116,
+        "p95Ms": 7,
+        "maxMs": 7
+      },
+      "unlockMs": {
+        "count": 10,
+        "medianMs": 259.25,
+        "p95Ms": 269.8999999985099,
+        "maxMs": 269.8999999985099
+      }
+    },
+    "actualVault": {
+      "createMs": {
+        "count": 10,
+        "medianMs": 143.29999999701977,
+        "p95Ms": 158.60000000149012,
+        "maxMs": 158.60000000149012
+      },
+      "unlockMs": {
+        "count": 10,
+        "medianMs": 164.10000000149012,
+        "p95Ms": 173.30000000447035,
+        "maxMs": 173.30000000447035
+      },
+      "commitMs": {
+        "count": 10,
+        "medianMs": 49.599999997764826,
+        "p95Ms": 52.600000001490116,
+        "maxMs": 52.600000001490116
+      }
+    }
+  },
+  "finished": "2026-09-19T17:47:46.767Z",
+  "metadata": {
+    "hardware": "MSI MAG B550M BAZOOKA (MS-7C95 rev 2.0) — AMD Ryzen 5 3600 6C/12T 3.6 GHz — 16 Go RAM",
+    "system": "Windows 11 Pro 10.0.26200 build 26200 — [Firefox/Chrome VERSION EXACTE]",
+    "conditions": "Secteur, mode économie désactivé, poste de bureau",
+    "declaredSlowestPhysicalTarget": true,
+    "observedProcessPeakMiB": null,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+    "logicalCores": 12,
+    "deviceMemoryHintGiB": 8,
+    "provenance": {
+      "builtAt": "2026-09-19T17:40:21.773Z",
+      "commit": "0553526fae84823211917881272837abb4e65136",
+      "dirty": false,
+      "node": "v22.17.0",
+      "hashes": {
+        "benchmark/worker.js": "3371f5dd4eb80bc480c2edb241d1c3775beea82c87020085ec92189d0a4b6776",
+        "benchmark/page.js": "6b52b038ff6879bca9828a6aa869ed92379903835593f1066686de7dd49c7a86",
+        "benchmark/index.html": "4360d6da4fb0e4897b014c2dd0b4157d124c3900f8db2d78fbb7602f650aa89a",
+        "scripts/build-benchmark.mjs": "ef4bdb5dc653bd2b827bdef28249b69f2a7d8a31994c0be0d255fe572426b2f4",
+        "scripts/server.mjs": "64151bb38a295f3bc2348670e434de62dea87ceb2801827c9204e8f5299a8afd",
+        "web/crypto.js": "c6141f6ad9d73f9013930823314460f660f8072b9bdcedabe606bc16625ac219",
+        "web/vault.js": "e18acf98bc797d828f5789d9c598a4fbc193eb640a27ffb8713980a545a35576",
+        "package-lock.json": "1f9f8ceaf83bd753271aeccb791bbbd964e6be4aa13c577c8ea44e2ab6b6289c",
+        "dist/benchmark-worker.js": "7fb46288177b82417c7c3d3a6443ec7fea76a6eeaae45ae3d4fe2177553fad10",
+        "dist/benchmark.js": "ac8e460072712171b28c9f3abaa97c32d5f9e94687575c91d0b9b51e931a9489"
+      }
+    }
+  },
+  "ui": {
+    "maxTimerDelayMs": 18.399999998509884,
+    "hiddenDuringRun": false
+  },
+  "gateDecision": "PENDING_TARGET_REVIEW"
+}
