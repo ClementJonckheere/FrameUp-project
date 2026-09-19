@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>FrameUp — mesure du coffre</title><link rel="stylesheet" href="/style.css">
+<main><h1>Mesurer le coffre sur cet appareil</h1>
+<p>Mesures locales sur données fictives. Aucun mot de passe personnel à saisir. Le résultat ne clôture pas automatiquement G0.</p>
+<form id="form">
+<p><label>Modèle, processeur et RAM <input id="hardware" required placeholder="Modèle exact, CPU, RAM"></label></p>
+<p><label>OS et version exacte du navigateur <input id="system" required></label></p>
+<p><label>Alimentation, mode économie et autres charges <input id="conditions" required placeholder="Secteur, économie désactivée, autres applications fermées"></label></p>
+<p><label>Pic mémoire du processus observé (Mio, facultatif) <input id="memory" type="number" min="1"></label></p>
+<p><label><input id="target" type="checkbox"> Cet appareil physique est le plus lent de la cible desktop retenue.</label></p>
+<button id="run">Lancer les deux KDF (plusieurs minutes possibles)</button>
+<button id="cancel" type="button" disabled>Annuler</button></form>
+<p id="status" role="status">Prêt. Garder cet onglet visible pendant toute la mesure.</p>
+<button id="download" disabled>Exporter le rapport JSON</button><pre id="result"></pre>
+<p>PBKDF2-SHA256 : 600 000 itérations. Argon2id v1.3 : 64 Mio, 3 passes, 4 lanes. Une première exécution et dix répétitions par KDF ; coffre fictif de 1 Mio. Le pic mémoire réel doit être relevé avec l'outil de l'OS, les 64 Mio sont un paramètre et non une mesure.</p>
+</main><script type="module" src="/benchmark.js"></script></html>

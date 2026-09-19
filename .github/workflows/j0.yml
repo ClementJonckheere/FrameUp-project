@@ -1,0 +1,41 @@
+name: FrameUp J0
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-poc:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: rustup toolchain install 1.98.1 --profile minimal --target wasm32-unknown-unknown
+      - run: cargo install wasm-bindgen-cli --version 0.2.128 --locked
+      - run: npm ci
+      - run: npx playwright install --with-deps --only-shell chromium firefox
+      - run: npm run build
+      - name: Unit tests
+        run: |
+          mkdir -p reports
+          set -o pipefail
+          npm run test:unit | tee reports/unit-results.tap
+      - name: Validate benchmark tooling (not target performance)
+        run: |
+          npm run benchmark:build
+          npm run test:benchmark
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: j0-results
+          path: |
+            reports/j0-results.json
+            reports/unit-results.tap
+          if-no-files-found: warn
