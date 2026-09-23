@@ -2,9 +2,9 @@
 
 > Remplacement partiel au 18 septembre 2026 — [ADR-016, révision 0.2](ADR-016_Application_mobile.md) : l’exclusion du mobile est remplacée à l’échelle du produit. La validation initiale J0-Web reste limitée au desktop. Route mobile et entrée au pilote restent conditionnelles ; la [matrice mobile](Matrice_J0_mobile.md) est un backlog, pas un chantier lancé.
 
-Version 0.2 · 19 septembre 2026 · Acceptation des contrats du POC (nom de fichier conservé pour les liens)
+Version 0.3 · 23 septembre 2026 · Confirmation explicite des acceptations POC (nom de fichier conservé pour les liens)
 
-Décisionnaire : Clément Jonckheere, selon son instruction de clôture du 19 septembre 2026. Transcription technique : Codex. Acceptation limitée au POC décrit dans [Contrats_POC_J0.md](Contrats_POC_J0.md), sans revue indépendante ni approbation de production. Version antérieure conservée dans [l'historique](history/Architecture_ADR_avant_acceptation_J0.md).
+Décisionnaire : Clément Jonckheere. Acceptations initialement consignées le 19 septembre 2026, explicitement confirmées par le décisionnaire le 23 septembre 2026. Transcription technique : Codex. Acceptation limitée au POC décrit dans [Contrats_POC_J0.md](Contrats_POC_J0.md), sans revue indépendante ni approbation de production. Version antérieure conservée dans [l'historique](history/Architecture_ADR_avant_acceptation_J0.md).
 
 ## 1. Comment utiliser ce document
 
@@ -15,6 +15,16 @@ Référence fonctionnelle : `FrameUp_Prototype_Specification_v0.1.md`, datée du
 Statuts utilisés : **Proposé** (choix de travail), **Expérimental** (hypothèse dont la faisabilité doit être démontrée), **Accepté** (après décision explicite enregistrée), **Remplacé** (un nouvel ADR conserve le lien). Les ADR-003, 005, 006, 010 et 011 sont Acceptés pour les contrats et limites du POC. Les exigences métier au-delà du POC gardent leur validation J1/J4. Le choix KDF cible de l'ADR-011 reste bloquant G0.
 
 Le POC doit éprouver les décisions risquées avant la construction de toutes les interfaces. La charte graphique décrit la cible visuelle ; elle ne constitue pas un critère préalable à la preuve cryptographique.
+
+### Confirmation d'acceptation du 23 septembre 2026
+
+À la demande explicite de **Clément Jonckheere**, décisionnaire, les ADR **003, 005, 006, 010 et 011** sont confirmés au statut **Accepté — périmètre POC J0**. La mention du 19 septembre est conservée comme historique ; cette confirmation n'antidate pas la présente décision. Codex en assure la transcription, sans constituer une revue cryptographique indépendante.
+
+L'acceptation porte sur les contrats effectivement implémentés et les limites des [contrats POC, section 6](Contrats_POC_J0.md#6-limites-explicitement-acceptées-pour-ce-poc). Elle n'atteste pas l'implémentation des fonctions cibles J1/J4 mentionnées dans les décisions. Les alternatives et critères de validation restent conservés.
+
+**Limites communes assumées :** secrets accessibles en mémoire JS/WASM, absence de protection contre un client distribué malveillant, snapshots dépendants des versions, absence de protection contre le rollback complet du profil, perte possible du coffre par éviction/effacement, persistance démontrée face aux exceptions injectées mais pas aux coupures électriques ou arrêts brutaux. Le relais reste un modèle en mémoire ; admission métier, récupération serveur/propriétaire et révocation transactionnelle restent aux jalons prévus. Une revue indépendante reste nécessaire avant des données sensibles.
+
+**Acceptation des ADR et clôture de G0 sont distinctes.** Cette confirmation ne clôt pas G0 et ne tranche pas définitivement le KDF cible. La mesure Chrome déjà analysée soutient un choix provisoire d'Argon2id ; le complément Firefox et la version complète de Chrome restent attendus dans la [PR #2](https://github.com/ClementJonckheere/FrameUp-project/pull/2). Le format v1 exécuté conserve PBKDF2-SHA256/600k ; aucune migration n'est introduite par cet acte documentaire.
 
 ## 2. Objectif et périmètre
 
@@ -166,6 +176,10 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 **Statut : Accepté — périmètre POC J0.**
 
+**Confirmation explicite :** 23 septembre 2026. **Décisionnaire : Clément Jonckheere.** Transcription : Codex.
+
+**Limites du POC assumées :** Compatibilité acceptée pour les versions navigateur et dépendances consignées dans la référence CI. Les snapshots restent liés aux versions verrouillées ; aucune migration inter-version, compatibilité native/mobile, gestion générale des commits concurrents ou revue indépendante n'est présumée. Les limites communes ci-dessus et celles de la section 6 des contrats POC sont acceptées pour ce périmètre.
+
 **Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. OpenMLS 0.9.0/RustCrypto 0.6.0 et suite X25519/AES-128-GCM/SHA-256/Ed25519 retenus ; matrice 38/0/0. Snapshots liés aux versions, pas de compatibilité native présumée. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
 
 **Contexte.** Ajouter et retirer des appareils nécessite un protocole de groupe éprouvé. Chiffrer avec une bibliothèque de primitives ne résout pas le cycle de vie.
@@ -196,6 +210,10 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 **Statut : Accepté — périmètre POC J0.**
 
+**Confirmation explicite :** 23 septembre 2026. **Décisionnaire : Clément Jonckheere.** Transcription : Codex.
+
+**Limites du POC assumées :** Les ancres fiables sont fournies par le harnais. Les vérificateurs ne réalisent pas une validation exhaustive des schémas et chaînes ; sérialisation restreinte non revendiquée RFC 8785. L'admission MLS n'impose pas encore les contrôles métier, les expirations et les défis d'origine ; vérification humaine et délégation restent à construire. Les limites communes ci-dessus et celles de la section 6 des contrats POC sont acceptées pour ce périmètre.
+
 **Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. Formats identité/certificat/politique et ancres figés aux sections 1–3 du contrat ; admission métier, expirations et délégation restent J1. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
 
 **Contexte.** L'inscription pseudonyme doit coexister avec une vérification humaine et une révocation d'appareil.
@@ -211,6 +229,10 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 ### ADR-006 — Archives durables séparées des états de communication
 
 **Statut : Accepté — périmètre POC J0.**
+
+**Confirmation explicite :** 23 septembre 2026. **Décisionnaire : Clément Jonckheere.** Transcription : Codex.
+
+**Limites du POC assumées :** La preuve couvre la séparation et l'aller-retour de clés d'archives. Rotation par période, clés par fichier, redistribution complète de l'historique et scénarios T07/T11/T25/T35 restent à démontrer. Une ancienne copie reçue par un membre retiré n'est pas effacée ; une compromission des clés d'archives expose les données correspondantes. Les limites communes ci-dessus et celles de la section 6 des contrats POC sont acceptées pour ce périmètre.
 
 **Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. Séparation et aller-retour des clés d'archives acceptés ; rotation par période, partage complet d'historique et T07/T11/T25/T35 non démontrés. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
 
@@ -270,6 +292,10 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 
 **Statut : Accepté — périmètre POC J0.**
 
+**Confirmation explicite :** 23 septembre 2026. **Décisionnaire : Clément Jonckheere.** Transcription : Codex.
+
+**Limites du POC assumées :** Les usages identité et archives ont des clés HKDF distinctes mais une racine commune. Vol du kit et des paquets correspondants : les deux usages peuvent être exposés. Les paquets restent nécessaires ; restaurer l'identité ne réadmet pas dans un groupe et ne réactive pas les anciens états MLS. Générations serveur, révocation atomique et récupération propriétaire restent J1/J4. Les limites communes ci-dessus et celles de la section 6 des contrats POC sont acceptées pour ce périmètre.
+
 **Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. BIP39/HKDF et domaines identité/archives figés ; racine commune et besoin des paquets explicitement acceptés. Générations serveur et récupération propriétaire restent J1/J4. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
 
 **Contexte.** Perdre tous les appareils ne doit pas permettre à l'administrateur de contourner le chiffrement.
@@ -285,6 +311,10 @@ Le contrat HTTP est décrit en OpenAPI avant implémentation complète. Il disti
 ### ADR-011 — Coffre local, blobs privés et finalisation autorisée
 
 **Statut : Accepté — périmètre POC J0.**
+
+**Confirmation explicite :** 23 septembre 2026. **Décisionnaire : Clément Jonckheere.** Transcription : Codex.
+
+**Limites du POC assumées :** La transaction IndexedDB et le Web Lock ne prouvent ni flush disque, résistance à une coupure électrique, compteur monotone externe ni persistance garantie face à l'éviction. Une entrée malformée peut imposer récupération. Uploads, purge et verrouillage d'inactivité restent non validés. PBKDF2-600k définit le format POC v1 ; l'acceptation du contrat ne vaut pas arbitrage KDF définitif ni migration Argon2id. Les limites communes ci-dessus et celles de la section 6 des contrats POC sont acceptées pour ce périmètre.
 
 **Décision enregistrée :** 19 septembre 2026 ; décisionnaire Clément Jonckheere (instruction de clôture), transcription Codex. Enveloppe AES-GCM, métadonnées IndexedDB et discipline dirty/outbox acceptées. Format POC PBKDF2-SHA256/600k ; choix KDF cible encore ouvert jusqu'au benchmark. Uploads, purge et verrouillage d'inactivité non validés. Limites de la section 6 des [contrats figés](Contrats_POC_J0.md) explicitement acceptées pour ce POC ; aucune validation de production présumée. [Preuves](Rapport_J0.md).
 
